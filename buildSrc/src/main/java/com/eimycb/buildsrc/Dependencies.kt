@@ -16,7 +16,6 @@ import Dependencies.junit
 import Dependencies.kotlinCore
 import Dependencies.lifeCycle
 import Dependencies.logginInterceptor
-import Dependencies.material
 import Dependencies.okHttp
 import Dependencies.retrofit
 import Dependencies.retrofitConverter
@@ -29,7 +28,6 @@ object Dependencies {
 
     const val kotlinCore = "androidx.core:core-ktx:${Versions.kotlinCore}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    const val material = "com.google.android.material:material:${Versions.material}"
     const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
     const val lifeCycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifeCycle}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
@@ -40,14 +38,14 @@ object Dependencies {
     const val composeUi ="androidx.compose.ui:ui"
     const val composeUiGraphic = "androidx.compose.ui:ui-graphics"
     const val composePreview ="androidx.compose.ui:ui-tooling-preview"
-    const val composeMaterial ="androidx.compose.material3:material3"
+    const val composeMaterial ="androidx.compose.material3:material3-android:${Versions.material}"
 
     /** Testing **/
 
     const val junit = "junit:junit:${Versions.junit}"
     const val extJunit = "androidx.ext.test.ext:junit:${Versions.extJunit}"
     const val espressoCore = "androidx.ext.test.espresso:espresso-core:${Versions.espresso}"
-    const val composeTesting ="\"androidx.compose:compose-bom:2023.08.00\""
+    const val composeTesting ="androidx.compose:compose-bom:2023.08.00"
 
     /** Network **/
 
@@ -67,24 +65,27 @@ object Dependencies {
 /** Dependencies **/
 
 fun DependencyHandler.general() {
-    implementation(material)
     implementation(appCompat)
     implementation(lifeCycle)
     implementation(coroutines)
     implementation(kotlinCore)
+
+}
+
+fun DependencyHandler.compose() {
     implementation(activityCompose)
-    implementation(composeBom)
+    implementation(platform(composeBom))
     implementation(composeUi)
     implementation(composeUiGraphic)
     implementation(composePreview)
     implementation(composeMaterial)
+    androidTestImplementation(composeTesting)
 }
 
 fun DependencyHandler.testing() {
     testImplementation(junit)
     androidTestImplementation(extJunit)
     androidTestImplementation(espressoCore)
-    androidTestImplementation(composeTesting)
 }
 
 fun DependencyHandler.network() {

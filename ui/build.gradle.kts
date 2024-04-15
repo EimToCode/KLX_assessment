@@ -10,6 +10,7 @@ java {
 dependencies {
     di()
     general()
+    compose()
     network()
     testing()
 

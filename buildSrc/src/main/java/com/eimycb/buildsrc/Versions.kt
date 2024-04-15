@@ -5,12 +5,12 @@ object Versions {
     /** General **/
 
     const val hilt = "2.45"
-    const val material = "1.11.0"
     const val appCompat = "1.6.1"
     const val lifeCycle = "2.7.0"
     const val coroutines = "1.7.1"
     const val kotlinCore = "1.12.0"
-    const val activityCompose ="1.7.0"
+    const val activityCompose = "1.7.0"
+    const val material = "1.2.1"
 
     /** Testing **/
 

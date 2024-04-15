@@ -23,6 +23,11 @@ fun DependencyHandler.androidTestImplementation(library: String) {
     add("androidTestImplementation", library)
 }
 
+fun DependencyHandler.androidTestImplementation(library: Platform) {
+    add("androidTestImplementationPlatform", library)
+}
+
+
 fun DependencyHandler.kapt(library: String) {
     add("kapt", library)
 }

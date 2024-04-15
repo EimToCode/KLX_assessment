@@ -8,6 +8,18 @@
       <entry key="domain">
         <State />
       </entry>
+      <entry key="feature">
+        <State />
+      </entry>
+      <entry key="library">
+        <State />
+      </entry>
+      <entry key="network">
+        <State />
+      </entry>
+      <entry key="ui">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

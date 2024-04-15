@@ -11,9 +11,11 @@ android {
 dependencies {
     di()
     general()
+    compose()
     testing()
 
     implementation(project(":domain"))
-    implementation(project(":feature"))
+    implementation(project(":ui"))
     implementation(project(":network"))
+    implementation(project(":library"))
 }

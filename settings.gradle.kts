@@ -15,7 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "KLx_Assessment"
 include(":app")
-include(":feature")
+include(":ui")
 include(":domain")
 include(":network")
 //include(":buildSrc")
+include(":library")
